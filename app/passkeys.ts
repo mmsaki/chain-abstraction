@@ -1,6 +1,6 @@
 /*
- * @notice: Creates passkey credentials
- * @reuturn: PublicKeyCredential
+ * @notice: Create passkey credential
+ * @return: PublicKeyCredential
  * */
 export async function createCred(): Promise<PublicKeyCredential | undefined> {
   if (!window.PublicKeyCredential) alert("Passkeys not supported on this Client/Platform/Browser!");
