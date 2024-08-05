@@ -2,16 +2,14 @@
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Test
+
+```bash
+bun test
+```
