@@ -2,6 +2,10 @@
 
 import { Octokit } from "@octokit/core";
 
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN, // set GITHIB_TOKEN in env.local
+});
+
 /**
  * GET requet Superchain Token List
  * @notice: Reference for API https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28
@@ -15,10 +19,6 @@ import { Octokit } from "@octokit/core";
  *
  */
 export async function getTokenList(owner: string, repo: string, path: string) {
-  const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN, // set GITHIB_TOKEN in env.local
-  });
-
   const res = await octokit.request(`GET /repos/${owner}/${repo}/contents/${path}`, {
     owner: "OWNER",
     repo: "REPO",
@@ -28,11 +28,7 @@ export async function getTokenList(owner: string, repo: string, path: string) {
     },
   });
 
-  const tokenList = JSON.stringify(
-    res.data.map((el: any) => {
-      return el["name"];
-    })
-  );
+  const tokenList = JSON.stringify(res.data.map((token: any) => token["name"]));
   return tokenList;
 }
 
@@ -45,19 +41,8 @@ export async function getTokenList(owner: string, repo: string, path: string) {
  * @return: tokenData see https://static.optimism.io/#adding-a-token-to-the-list
  *          {"name": string, "symbol": string, "tokens": {"base": "0xB45E...", "optimism": "0xED32..."}}
  */
-export async function getTokenData(tokenName: string) {
-  let owner = "ethereum-optimism";
-  let repo = "ethereum-optimism.github.io";
-  let path = "data";
-  const tokenList = await getTokenList(owner, repo, path);
-
-  if (!tokenList.includes(tokenName)) throw new Error(`${tokenName} not found in OP Chain list`);
-
-  const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN,
-  });
-
-  const tokenData = await octokit.request(`GET /repos/${owner}/${repo}/contents/${path}/${tokenName}`, {
+export async function getTokenData(owner: string, repo: string, path: string) {
+  const tokenData = await octokit.request(`GET /repos/${owner}/${repo}/contents/${path}`, {
     owner: "OWNER",
     repo: "REPO",
     path: "PATH",
@@ -66,5 +51,5 @@ export async function getTokenData(tokenName: string) {
     },
   });
 
-  return tokenData;
+  return JSON.stringify(tokenData.data);
 }
