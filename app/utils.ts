@@ -16,7 +16,7 @@ export function parseQuery(query: string) {
     return {
       match: arr[0],
       operator: arr[1],
-      query: arr[2],
+      param: arr[2],
     };
   } else {
     return {};

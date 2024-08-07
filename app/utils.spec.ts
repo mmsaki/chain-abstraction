@@ -6,7 +6,7 @@ test("parse Query correctly", () => {
   expect(parseQuery(query)).toEqual({
     match: "metall2:0xdAC17F958D2ee523a2206206994597C13D831ec7",
     operator: "metall2",
-    query: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    param: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
   });
 });
 
@@ -15,7 +15,7 @@ test("parse Query correctly with white spaces", () => {
   expect(parseQuery(query)).toEqual({
     match: "metall2:0xdAC17F958D2ee523a2206206994597C13D831ec7",
     operator: "metall2",
-    query: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    param: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
   });
 });
 
@@ -24,7 +24,7 @@ test("parse Query within a sentence", () => {
   expect(parseQuery(query)).toEqual({
     match: "metall2:0xdAC17F958D2ee523a2206206994597C13D831ec7",
     operator: "metall2",
-    query: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    param: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
   });
 });
 
