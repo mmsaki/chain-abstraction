@@ -5,8 +5,11 @@
  * @returns {operator: "", query: ""}
  */
 export function parseQuery(query: string) {
+  // 1. remove white spaces
   query = query.trim();
-  let re = /(.+):([^\s]+)/;
+
+  // 2. regex pattern
+  let re = /(\S+):([\S]+)/;
   let arr = query.match(re);
 
   if (arr?.length == 3) {
