@@ -5,6 +5,7 @@
  * @returns {operator: "", query: ""}
  */
 export function parseQuery(query: string) {
+  query = query.trim();
   let re = /(.+):([^\s]+)/;
   let arr = query.match(re);
 
