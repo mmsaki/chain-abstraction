@@ -14,6 +14,7 @@ export function parseQuery(query: string) {
 
   if (arr?.length == 3) {
     return {
+      match: arr[0],
       operator: arr[1],
       query: arr[2],
     };
