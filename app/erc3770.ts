@@ -1,7 +1,7 @@
 import { checksumAddress, Address, isAddress } from "viem";
 
 /**
- * @title EIP3770 Chain-specific address
+ * @title ERC3770 Chain-specific address
  * @notice Reference: https://eips.ethereum.org/EIPS/eip-3770
  *
  * @param  {string}  `shortName` is mandatory and MUST be a valid chain short name from https://github.com/ethereum-lists/chains
@@ -9,7 +9,7 @@ import { checksumAddress, Address, isAddress } from "viem";
  *
  * @return {string}  `shortName:address`
  */
-export async function addressToEIP3770(shortName: string, address: Address): Promise<string | undefined> {
+export async function toERC3770String(shortName: string, address: Address): Promise<string | undefined> {
   // 1. Check valid address
   address = checksumAddress(address);
   if (!isAddress(address)) throw new Error(`Address is invalid: ${address}`);
