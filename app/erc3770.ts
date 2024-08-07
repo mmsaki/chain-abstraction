@@ -1,5 +1,19 @@
 import { checksumAddress, Address, isAddress } from "viem";
 
+export function parseERC3770String(str: string) {
+  str = str.trim();
+  let re = /(\S+):(\S+)/;
+  let arr = str.match(re);
+  if (arr?.length === 3) {
+    return {
+      shortName: arr[1],
+      address: arr[2],
+    };
+  } else {
+    throw new Error("Invalid string");
+  }
+}
+
 /**
  * @title ERC3770 Chain-specific address
  * @notice Reference: https://eips.ethereum.org/EIPS/eip-3770
