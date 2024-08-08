@@ -13,6 +13,8 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@octokit/core": "^6.1.2",
+    "@safe-global/protocol-kit": "4.1.0-alpha.1",
+    "@safe-global/relay-kit": "3.1.0-alpha.1",
     "@types/jest": "^29.5.12",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
