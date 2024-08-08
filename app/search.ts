@@ -1,3 +1,4 @@
+import { isAddressEqual } from "viem";
 import { parseERC3770String, toValidERC3770String } from "./erc3770";
 
 import { parseQuery } from "./utils";
@@ -15,6 +16,6 @@ export async function doERC3770Search(params: string) {
   if (operator !== shortName) alert(`$Error: Operator ${operator} does not match shortName ${shortName}`);
   if (param !== address) alert(`$Error: Param ${param} does not match address ${address}`);
 
-  const response = await fetch(`https://explorer.metall2.com/api/v2/addresses`);
+  const response = await fetch(`https://explorer.metall2.com/api/v2/addresses/${address}`);
   return response;
 }
