@@ -1,4 +1,3 @@
-import { isAddressEqual } from "viem";
 import { parseERC3770String, toValidERC3770String } from "./erc3770";
 
 import { parseQuery } from "./utils";
