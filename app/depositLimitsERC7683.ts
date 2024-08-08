@@ -1,5 +1,13 @@
 import { Address } from "viem";
 
+// response:
+// {
+//   "minDeposit": 7799819,
+//   "maxDeposit": 22287428516241,
+//   "maxDepositInstant": 201958902363,
+//   "maxDepositShortDelay": 2045367713809,
+//   "recommendedDepositInstant": 2045367713809
+// }
 export async function getDepositLimits(
   inputToken: Address,
   outputToken: Address,
