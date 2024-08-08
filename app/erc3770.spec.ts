@@ -41,7 +41,7 @@ test("test ERC3770 Check valid shortName", async () => {
   expect(await toValidERC3770String(shortName, address)).toBe("eth:0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5");
 });
 
-test("test parse ERC3770 string to objct", () => {
+test("test parse ERC3770 string to object", () => {
   let str = "eth:0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5";
   expect(parseERC3770String(str)).toEqual({ shortName: "eth", address: "0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5" });
 });

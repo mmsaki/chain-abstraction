@@ -1,7 +1,7 @@
 import { checksumAddress, Address, isAddress } from "viem";
 
 /**
- *  Separate ERC3770 Chain-specific address from input string
+ *  Create ERC3770 Chain-specific address object
  *
  * @param erc3770String {string}
  * @returns
@@ -28,7 +28,7 @@ export function parseERC3770String(erc3770String: string) {
 }
 
 /**
- * Make ERC3770 Chain-specific address from inputs
+ * Create ERC3770 Chain-specific address from inputs
  * @notice Reference: https://eips.ethereum.org/EIPS/eip-3770
  *
  * @param  {string}  `shortName` i
@@ -49,7 +49,7 @@ export async function toValidERC3770String(shortName: string, address: Address):
 }
 
 /**
- * Check if input param is a valid address
+ * Validate if param is a valid address
  *
  * @param address {Address} `0x${string}`
  * @returns { true | false }
@@ -60,7 +60,7 @@ export function isValidAddress(address: Address) {
 }
 
 /**
- * Checks if shortName provided is a valid chain short name from https://github.com/ethereum-lists/chains
+ * Validate if shortName provided is a valid chain shortName https://github.com/ethereum-lists/chains
  *
  * @param shortName {string}
  * @returns { true | false }
