@@ -4,7 +4,7 @@ import { parseQuery } from "./utils";
 
 export async function callERC3770Search(params: string) {
   let { match, operator, param } = parseQuery(params);
-  if (!match || !operator || !param) throw new Error("Failed to parsse query");
+  if (!match || !operator || !param) throw new Error("Failed to parse query");
 
   // 1. check match is and a valid ERC3770 string
   let erc3770String = await toValidERC3770String(operator, param);
