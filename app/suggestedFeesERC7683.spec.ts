@@ -1,5 +1,5 @@
 import { Address } from "viem";
-import { getSuggestedFees } from "./suggestedFees";
+import { getSuggestedFees } from "./suggestedFeesERC7683";
 
 test("ERC7683: can get suggested fees", async () => {
   let inputToken = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" as Address;

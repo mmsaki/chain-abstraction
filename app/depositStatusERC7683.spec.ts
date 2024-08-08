@@ -1,4 +1,4 @@
-import { getDepositStatus } from "./depositStatus";
+import { getDepositStatus } from "./depositStatusERC7683";
 
 test("ERC7683: can get status of deposit", async () => {
   let originChainId = BigInt(137);
