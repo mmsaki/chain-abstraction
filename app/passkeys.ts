@@ -18,6 +18,7 @@ export async function createCred(): Promise<PublicKeyCredential | undefined> {
   };
 
   await navigator.credentials
+    // @ts-ignore
     .create({ publicKey })
     .then((creds) => {
       console.log(creds);
