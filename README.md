@@ -16,6 +16,7 @@ bun test
 
 # Features
 
+<!--
 - [ ] Displaying ~1.7k chains 😱
 - [ ] Base
   - Build new and imaginative ways for onchain creativity to thrive with projects that help people create, discover, curate, and collect on Base.
@@ -117,4 +118,4 @@ bun test
   - Just [improve] it
     - Improve dev experience through tooling Ex.
       - (1) attestation deep-fake protection system,
-      - (2) chain-agnostic network health dashboard
+      - (2) chain-agnostic network health dashboard -->
