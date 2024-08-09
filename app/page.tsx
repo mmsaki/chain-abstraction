@@ -1,8 +1,6 @@
 "use client";
 
-import { addressToEIP3770, getChainList } from "./erc3770";
 import { getTokenData, getTokenList } from "./tokelist";
-import { getSearch } from "./utils";
 
 export default function Home() {
   let owner = "ethereum-optimism";
@@ -20,10 +18,6 @@ export default function Home() {
 
     const data = await getTokenData(owner, repo, path + `/${tokenName}/data.json`);
   }
-
-  const eip3770Address = addressToEIP3770("eth", "0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5");
-
-  const searchResults = getSearch("");
 
   return (
     <main className="p-8">
