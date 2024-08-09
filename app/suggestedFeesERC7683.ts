@@ -1,5 +1,3 @@
-import { Address } from "viem";
-
 // ressponse:
 // {
 //   "totalRelayFee": {
@@ -26,16 +24,13 @@ import { Address } from "viem";
 //   "exclusivityDeadline": "10"
 // }
 
-export async function getSuggestedFees(
-  inputToken: Address,
-  outputToken: Address,
-  originalChainId: BigInt,
-  destinationChainId: BigInt,
-  amount: BigInt
-) {
-  const baseUrl = `https://app.across.to/api/`;
+export async function getSuggestedFees(originChainId: BigInt, destinationChainId: BigInt, amount: BigInt) {
+  let baseUrl = `https://api.straddl.io`;
+  let route = `/suggested-fees`;
   const response = await fetch(
-    `${baseUrl}/suggested-fees/?inputToken=${inputToken}&outputToken=${outputToken}&originalChainId=${originalChainId}&destinationChainId=${destinationChainId}&amount=${amount}`
+    baseUrl +
+      route +
+      `?tokenSymbol=WETH&originChainId=${originChainId}&destinationChainId=${destinationChainId}&amount=${amount}`
   );
   return response;
 }
