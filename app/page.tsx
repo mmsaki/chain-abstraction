@@ -1,6 +1,10 @@
 "use client";
 
 import { getTokenData, getTokenList } from "./tokelist";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Image from "next/image";
+import Search from "./components/Search";
 
 export default function Home() {
   let owner = "ethereum-optimism";
@@ -20,30 +24,13 @@ export default function Home() {
   }
 
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold">Chain Abstraction</h1>
-      <p>Using chain-specific addresses with a human-readable chain identifier</p>
-      <br />
-      {/* <button className="border px-4 py-1" type="button" id="sign-in" onClick={createCred}>
-        Sign Up
-      </button> */}
-      <form action={() => {}} method="post">
-        <label htmlFor="eip3770" className="block">
-          <span className="block peer-invalid:text-red-600">EIP3770 Address</span>
-          <div className="border shadow-sm border-gray-300 rounded-md w-max  peer-invalid:border-red-600">
-            <select className="font-light font-mono focus:outline-none p-1 text-sm" name="chainName" id="shortName">
-              <option value="">Chain</option>
-            </select>
-            <span>:</span>
-            <input
-              className="peer focus-within:shadow-lg rounded-md focus:outline-none p-1 font-mono w-[320px] focus-within:border-blue-600 valid:text-green-600 invalid:text-red-600 focus:invalid:border-red-500"
-              type="text"
-              placeholder="0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5"
-              pattern="0x(?=.*[A-Fa-f])(?=.*\d).{40}"
-            />
-          </div>
-        </label>
-      </form>
-    </main>
+    <div className="flex flex-1 content-center justify-center">
+      <div className="flex justify-center items-center flex-col gap-8">
+        {/* logo */}
+        <Image src="LOGO_Full.svg" width={300} height={300} alt="LOGO" />
+        {/* search input */}
+        <Search />
+      </div>
+    </div>
   );
 }
