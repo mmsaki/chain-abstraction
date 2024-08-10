@@ -27,7 +27,7 @@ export default function Home() {
     <div className="flex flex-1 justify-center items-center flex-col gap-16">
       <div className="flex relative">
         {/* logo */}
-        <p className="drop-shadow-lg sm:text-6xl md:text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
+        <p className="sm:text-6xl md:text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
           Siera
         </p>
         <Image
