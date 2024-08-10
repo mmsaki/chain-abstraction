@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import VideIcon from "../../public/VideoIcon.svg";
+import VideoIcon from "../icons/VideoIcon";
+import MicIcon from "../icons/MicIcon";
 
 const Search = () => {
   return (
@@ -22,11 +25,12 @@ const Search = () => {
           <button type="submit" className="hidden">
             Search
           </button>
-          <a className="absolute inset-y-0 end-2 pe-8 flex items-center hover:cursor-pointer">
-            <Image src={"MicIcon.svg"} alt="Search Icon" width={16} height={16} />
+          <a className="absolute inset-y-0 end-2 pe-8 flex items-center hover:cursor-wait">
+            <MicIcon />
           </a>
-          <a className="absolute inset-y-0 end-0 pe-4 flex items-center hover:cursor-pointer">
-            <Image src={"VideoIcon.svg"} alt="Search Icon" width={16} height={16} />
+
+          <a className="absolute inset-y-0 end-0 pe-4 flex items-center hover:cursor-wait">
+            <VideoIcon />
           </a>
         </div>
       </form>
