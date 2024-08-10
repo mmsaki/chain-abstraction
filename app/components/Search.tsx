@@ -1,8 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import VideIcon from "../../public/VideoIcon.svg";
 import VideoIcon from "../icons/VideoIcon";
 import MicIcon from "../icons/MicIcon";
+import SearchIcon from "../icons/SearchIcon";
 
 const Search = () => {
   return (
@@ -13,7 +12,7 @@ const Search = () => {
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none select-none ">
-            <Image src={"SearchIcon.svg"} alt="Search Icon" width={16} height={16} />
+            <SearchIcon />
           </div>
           <input
             type="search"
