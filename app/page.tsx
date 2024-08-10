@@ -25,8 +25,19 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 justify-center items-center flex-col gap-16">
-      {/* logo */}
-      <Image src="LOGO_Full.svg" width={300} height={300} alt="LOGO" className="select-none" />
+      <div className="flex relative">
+        {/* logo */}
+        <p className="drop-shadow-lg text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
+          Siera
+        </p>
+        <Image
+          className="absolute left-56 bottom-12 select-none"
+          src="/Web3Logo.svg"
+          width={72}
+          height={72}
+          alt="LOGO"
+        />
+      </div>
       {/* search input */}
       <Search />
     </div>
