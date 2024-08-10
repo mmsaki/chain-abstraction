@@ -3,7 +3,7 @@ import React from "react";
 function ArrowUpIcon() {
   return (
     <svg
-      className="stroke-gray-800"
+      className="stroke-gray-800 hover:text-gray-900"
       width="12"
       height="12"
       viewBox="0 0 12 12"

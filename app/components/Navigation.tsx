@@ -12,18 +12,10 @@ function Navigation() {
           Siera
         </a>
       </div>
-      <div className="w-full justify-end xm:hidden sm:flex" id="navbar-solid-bg">
+      <div className="w-full justify-end xs:hidden sm:flex" id="navbar-solid-bg">
         <MenuIcon />
         <a href="/deposit" className="flex justify-center items-center px-3 font-sans text-gray-800 hover:underline">
           Deposit
-        </a>
-        <a
-          href="/receive"
-          className="flex justify-center items-center px-3 font-sans gap-1 text-gray-800 rounded hover:underline">
-          Receive
-          <span>
-            <ArrowDownIcon />
-          </span>
         </a>
         <a
           href="/transfer"
@@ -33,7 +25,14 @@ function Navigation() {
             <ArrowUpIcon />
           </span>
         </a>
-
+        <a
+          href="/receive"
+          className="flex justify-center items-center px-3 font-sans gap-1 text-gray-800 rounded hover:underline">
+          Receive
+          <span>
+            <ArrowDownIcon />
+          </span>
+        </a>
         <a
           href="/create-account"
           className="flex justify-center items-center px-3 font-sans text-gray-800 rounded hover:underline">

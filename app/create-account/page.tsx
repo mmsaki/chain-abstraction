@@ -7,7 +7,7 @@ function CreateAccount() {
         <form action="" method="post" className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>
           <input
-            className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2"
+            className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
             type="email"
             placeholder="meek@skiff.com"
           />

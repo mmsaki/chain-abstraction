@@ -4,7 +4,7 @@ function MenuIcon() {
   return (
     <a href="">
       <svg
-        className="w-8 h-8 stroke-slate-700 sm:hidden"
+        className="w-8 h-8 stroke-slate-700 sm:hidden hover:text-gray-900"
         width="16"
         height="16"
         viewBox="0 0 16 16"
