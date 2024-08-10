@@ -24,13 +24,11 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-1 content-center justify-center">
-      <div className="flex justify-center items-center flex-col gap-8">
-        {/* logo */}
-        <Image src="LOGO_Full.svg" width={300} height={300} alt="LOGO" className="select-none" />
-        {/* search input */}
-        <Search />
-      </div>
+    <div className="flex flex-1 justify-center items-center flex-col gap-16">
+      {/* logo */}
+      <Image src="LOGO_Full.svg" width={300} height={300} alt="LOGO" className="select-none" />
+      {/* search input */}
+      <Search />
     </div>
   );
 }
