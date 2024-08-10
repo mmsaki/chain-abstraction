@@ -6,7 +6,7 @@ import React from "react";
 function Footer() {
   const pathname = usePathname();
   return (
-    <div className="flex-initial h-16 w-full justify-between items-center gap-20 inline-flex text-zinc-600 xs:p-2 sm:p-5">
+    <div className="flex-initial h-16 w-full justify-between items-center gap-20 inline-flex text-zinc-600 xs:p-2 sm:p-5 xs:text-xs sm:text-sm">
       <a
         href="/about"
         className={`link ${

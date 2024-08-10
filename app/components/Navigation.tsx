@@ -11,7 +11,7 @@ function Navigation() {
   const pathname = usePathname();
   return (
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
-      <div className="justify-start items-center flex p-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex">
+      <div className="justify-start items-center flex p-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex xs:text-xs sm:text-sm">
         <Link
           href="/"
           className={`link ${pathname === "/" ? "active text-gray-800 font-medium underline" : ""}`}
@@ -19,7 +19,9 @@ function Navigation() {
           Siera
         </Link>
       </div>
-      <div className="w-full justify-end xs:hidden sm:flex  font-sans text-gray-800" id="navbar-solid-bg">
+      <div
+        className="w-full justify-end xs:hidden sm:flex  font-sans text-gray-800 xs:text-xs sm:text-sm"
+        id="navbar-solid-bg">
         <MenuIcon />
         <Link
           href="/deposit"
