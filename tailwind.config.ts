@@ -12,6 +12,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        "gray-800": "#222222",
+      },
     },
     dropShadow: {
       glow: ["0 0px 20px rgba(255,255, 255, 0.0)", "0 0px 65px rgba(255, 255,255, 0.9)"],
@@ -21,6 +24,9 @@ const config: Config = {
       sm: "576px",
       md: "960px",
       lg: "1440px",
+    },
+    fontFamily: {
+      sans: ["Poppins"],
     },
   },
   plugins: [],
