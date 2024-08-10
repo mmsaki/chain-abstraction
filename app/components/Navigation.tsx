@@ -11,7 +11,7 @@ function Navigation() {
   const pathname = usePathname();
   return (
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
-      <div className="justify-start items-center flex p-5 gap-5 font-sans text-gray-800">
+      <div className="justify-start items-center flex p-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex">
         <Link
           href="/"
           className={`link ${pathname === "/" ? "active text-gray-800 font-medium underline" : ""}`}
