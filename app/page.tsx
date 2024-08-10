@@ -27,14 +27,14 @@ export default function Home() {
     <div className="flex flex-1 justify-center items-center flex-col gap-16">
       <div className="flex relative">
         {/* logo */}
-        <p className="drop-shadow-lg text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
+        <p className="drop-shadow-lg sm:text-6xl md:text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
           Siera
         </p>
         <Image
-          className="absolute left-56 bottom-12 select-none"
+          className="absolute md:left-56 md:bottom-12 sm:left-36 sm:bottom-6 md:w-14 md:h-14 sm:w-12 sm:h-12 select-none"
           src="/Web3Logo.svg"
-          width={72}
-          height={72}
+          width={64}
+          height={64}
           alt="LOGO"
         />
       </div>
