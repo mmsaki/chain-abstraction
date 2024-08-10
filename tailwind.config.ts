@@ -13,7 +13,19 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "gray-800": "#222222",
+        gray: {
+          "50": "#FFFFFF",
+          "75": "#F5F5F5",
+          "100": "#E6E6E6",
+          "200": "#D5D5D5",
+          "300": "#B1B1B1",
+          "400": "#909090",
+          "500": "#6D6D6D",
+          "600": "#464646",
+          "700": "#2C2C2C",
+          "800": "#222222",
+          "900": "#000000",
+        },
       },
     },
     dropShadow: {
