@@ -15,7 +15,7 @@ const Search = () => {
           <input
             type="search"
             id="default-search"
-            className="block p-4 ps-10 pe-16s xs:w-[90vw] sm:w-[576px] md:w-[600px] lg:w-[600px] rounded-full border border-zinc-300 text-lgs text-gray-900 bg-gray-50 focus:shadow-xl dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-whites focus:shadow-pink-200/50"
+            className="block p-4 ps-10 pe-16s xs:w-[90vw] sm:w-[576px] md:w-[600px] lg:w-[600px] rounded-full border border-zinc-300 text-lgs text-gray-900 bg-gray-50 focus:shadow-xl"
             placeholder=""
             required
           />
