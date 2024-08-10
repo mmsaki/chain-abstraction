@@ -1,10 +1,15 @@
+"use client";
+
 import React from "react";
 import RefreshIcon from "../icons/RefreshIcon";
 import MoreVerticalIcon from "../icons/MoreVerticalIcon";
 import ArrowDownIcon from "../icons/ArrowDownIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 function Balance() {
+  const pathname = usePathname();
   return (
     <div className="flex border rounded-lg p-6 flex-col gap-2">
       <div className="flex justify-between items-center">
@@ -22,25 +27,35 @@ function Balance() {
         </div>
       </div>
       <div className="flex gap-2 text-gray-600">
-        <a href="/deposit" className="flex justify-center items-center font-sans hover:underline hover:text-gray-900">
+        <Link
+          href="/deposit"
+          className={`link ${pathname === "/deposit" ? "active text-gray-800 font-medium underline px-3" : "px-3"}`}>
           Deposit
-        </a>
-        <a
+        </Link>
+        <Link
           href="/transfer"
-          className="flex justify-center items-center font-sans gap-1 rounded underline hover:text-gray-900">
+          className={`link ${
+            pathname === "/transfer"
+              ? "active text-gray-800 font-medium underline flex justify-center items-center px-3 gap-1"
+              : "flex justify-center items-center px-3 gap-1"
+          }`}>
           Transfer
           <span>
             <ArrowUpIcon />
           </span>
-        </a>
-        <a
+        </Link>
+        <Link
           href="/receive"
-          className="flex justify-center items-center font-sans gap-1 rounded hover:underline hover:text-gray-900">
+          className={`link ${
+            pathname === "/receive"
+              ? "active text-gray-800 font-medium underline flex justify-center items-center px-3 gap-1"
+              : "flex justify-center items-center px-3 gap-1"
+          }`}>
           Receive
           <span>
             <ArrowDownIcon />
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   );
