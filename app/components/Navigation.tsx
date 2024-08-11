@@ -74,15 +74,6 @@ function Navigation() {
             Account
           </Link>
         )}
-        {isLoggedIn === "true" ? (
-          <LogOut />
-        ) : (
-          <Link
-            href="/sign-in"
-            className={`link ${pathname === "/sign-in" ? "active text-gray-800 font-medium underline" : ""}`}>
-            Sign In
-          </Link>
-        )}
       </div>
     </div>
   );
