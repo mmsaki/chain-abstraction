@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FormEvent } from "react";
-import { Safe4337Pack } from "@safe-global/relay-kit";
 import { createPasskey } from "../passkeys";
 import { useRouter } from "next/navigation";
 
