@@ -51,13 +51,13 @@ const Search = () => {
       <div className="flex gap-4 mt-6 text-gray-500">
         <button
           onClick={async (event) => {
-            let { response, data } = await callERC3770Search("eth:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23");
+            let { response, data } = await callERC3770Search("metall2:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23");
             console.log(data);
             setData(data);
           }}
           className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl xs:text-xs sm:text-sm"
           type="button">
-          eth:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23
+          metall2:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23
         </button>
         <button
           onClick={async (event) => {
