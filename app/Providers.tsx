@@ -42,17 +42,23 @@ declare module "wagmi" {
   }
 }
 
-const AlchemyApiKey = process.env.AlchemyApiKey;
-const InfuraApiKey = process.env.InfuraApiKey;
-if (!AlchemyApiKey) throw new Error(`Failed to get AlchemyApiKey: ${AlchemyApiKey}`);
-if (!InfuraApiKey) throw new Error(`Failed to get InfuraApiKey: ${InfuraApiKey}`);
+let AlchemyApiKey: string;
+let InfuraApiKey: string;
 
 let appID: string;
 const env = process.env.NODE_ENV;
-if (env === "development") {
-  if (process.env.PRIVY_APP_ID) appID = process.env.PRIVY_APP_ID;
-} else if (env === "production") {
-  if (process.env.NEXT_PUBLIC_PRIVY_APP_ID) appID = process.env.NEXT_PUBLIC_PRIVY_APP_ID;
+try {
+  if (env === "development") {
+    if (process.env.PRIVY_APP_ID) appID = process.env.PRIVY_APP_ID;
+    if (process.env.AlchemyApiKey) AlchemyApiKey = process.env.AlchemyApiKey;
+    if (process.env.InfuraApiKey) InfuraApiKey = process.env.InfuraApiKey;
+  } else if (env === "production") {
+    if (process.env.NEXT_PUBLIC_PRIVY_APP_ID) appID = process.env.NEXT_PUBLIC_PRIVY_APP_ID;
+    if (process.env.NEXT_PUBLIC_AlchemyApiKey) AlchemyApiKey = process.env.NEXT_PUBLIC_AlchemyApiKey;
+    if (process.env.NEXT_PUBLIC_InfuraApiKey) AlchemyApiKey = process.env.NEXT_PUBLIC_InfuraApiKey;
+  }
+} catch (error) {
+  console.error(error);
 }
 
 export function Providers({ children }: { children: ReactNode }) {
@@ -67,7 +73,7 @@ export function Providers({ children }: { children: ReactNode }) {
     },
   };
   return (
-    <PrivyProvider appId={appID} config={privyConfig}>
+    <PrivyProvider appId="clzphuk18025vdnte8rlch87r" config={privyConfig}>
       <QueryClientProvider client={queryClient}>
         <WagmiProvider config={wagmiConfig}>{children}</WagmiProvider>
       </QueryClientProvider>

@@ -2,9 +2,11 @@
 import React from "react";
 import AccountIcon from "../icons/AccounIcon";
 import { useRouter } from "next/navigation";
+import { usePrivy } from "@privy-io/react-auth";
 
 function SignIn() {
   const router = useRouter();
+  const { login } = usePrivy();
 
   async function onSubmit(event: FormData) {
     const name = event.get("username");
@@ -47,14 +49,14 @@ function SignIn() {
           <button
             className="flex items-center justify-center bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
             type="submit">
-            Sign In
+            Sign In Passkeys
             <span className="px-2">
               <AccountIcon />
             </span>
           </button>
-          <a className="underline" href="">
-            Forget Password?
-          </a>
+          <button className="underline" onClick={() => login({ loginMethods: ["farcaster"] })}>
+            Log in with Farcaster?
+          </button>
         </form>
       </div>
     </div>
