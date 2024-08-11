@@ -8,5 +8,5 @@ export async function getDepositStatus(originChainId: BigInt, depositId: BigInt)
   let route = `/deposit/status`;
 
   let response = await fetch(baseURL + route + `?originChainId=${originChainId}&depositId=${depositId}`);
-  return response;
+  return { response: response, data: response.json() };
 }

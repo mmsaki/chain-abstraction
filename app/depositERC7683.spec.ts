@@ -25,7 +25,7 @@ test("ERC7683 test depoist", async () => {
   relayFeeTotal = BigInt(dataJSON["totalRelayFee"]["total"]);
 
   if (!relayFeeTotal) throw new Error("Failed to get total relay fee");
-  let response = await depositERC7683(
+  let { response } = await depositERC7683(
     timestamp,
     relayFeeTotal,
     tokenSymbol,

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import VideoIcon from "../icons/VideoIcon";
 import MicIcon from "../icons/MicIcon";
 import SearchIcon from "../icons/SearchIcon";
+import { callERC3770Search } from "../searchERC3770";
+import { getMetalL2Addresses } from "../matall2Addresses";
 
 const Search = () => {
   const [formValues, setFormValues] = useState({});
+  const [results, setResults] = useState({});
 
   return (
     <>
@@ -41,19 +44,27 @@ const Search = () => {
       </div>
       <div className="flex gap-4 mt-6 text-gray-500">
         <button
-          onClick={(event) => {
-            setFormValues({ search: "eth:0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5e" });
+          onClick={async (event) => {
+            let { response, data } = await callERC3770Search("eth:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23");
+            console.log(data);
+            setResults(data);
           }}
           className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl xs:text-xs sm:text-sm"
           type="button">
-          eth:0x04655832bcb0a9a0bE8c5AB71E4D311464c97AF5
+          eth:0x1AB4973a48dc892Cd9971ECE8e01DcC7688f8F23
         </button>
         <button
+          onClick={async (event) => {
+            let { response, data } = await getMetalL2Addresses();
+            console.log(data);
+            setResults(data);
+          }}
           className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl xs:hidden sm:flex sm:text-sm"
           type="button">
-          What is superchain?
+          What is address on MetalL2?
         </button>
       </div>
+      <p className="flex">{results ? JSON.stringify(results) : ""}</p>
     </>
   );
 };

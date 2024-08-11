@@ -18,5 +18,8 @@ export async function callERC3770Search(params: string) {
   if (param !== address) alert(`$Error: Param ${param} does not match address ${address}`);
 
   const response = await fetch(`https://explorer.metall2.com/api/v2/addresses/${address}`);
-  return response;
+  return {
+    response: response,
+    data: response.json(),
+  };
 }

@@ -29,5 +29,5 @@ export async function depositERC7683(
       route +
       `?timestamp=${timestamp}&relayFeeTotal=${relayFeeTotal}&tokenSymbol=${tokenSymbol}&destinationChainId=${destinationChainId}&originChainId=${originChainId}&amount=${amount}&recipient=${recipient}`
   );
-  return response;
+  return { response: response, data: response.json() };
 }

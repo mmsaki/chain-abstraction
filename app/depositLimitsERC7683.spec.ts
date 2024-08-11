@@ -7,7 +7,7 @@ test("ERC7683 can get deposit limit", async () => {
   let originChainId = BigInt(1);
   let destinationChainId = BigInt(10);
 
-  let response = await getDepositLimits(inputToken, outputToken, originChainId, destinationChainId);
+  let { response } = await getDepositLimits(inputToken, outputToken, originChainId, destinationChainId);
   expect(response.ok).toBeTruthy();
   expect(response.status).toBe(200);
 });
