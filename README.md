@@ -58,15 +58,17 @@ bun run build
 
 ## Features
 
-- Our goal provide transfer routing between multiple L2 - L2 transfers with ERC7683 support that exclusively uses ERC3770 chain-specific address for searching address and creating transfers.
-- We extend this concept by also deploying a L3 on top of Mode L2. This is a perfect use case for the need for readable ERC3770 address and using ERC7683 standards for token transfers.
-- We provide a simple search tool and use demonstrated with MetalL2 search address.
-- Using API from Across protocol we obtain many more tokens transfers routes between OPStack chains including those routing to L1.
-- We support log in with passkeys.
-- We also attempt use Farcaster for Log in - https://siera.cc/account
+- Our goal is to support cross-chain L2 - L2 trade and transfers execution through ERC7683 support and we exclusively uses ERC3770 chain-specific address as a UX improvement for creating transfers a opposed other methods to changing chains and addresses on the transfer UI.
+- We test this concept by also deploying a L3 on top of Mode Sepolia L2.
+  - This is a perfect use case for the need for readable ERC3770 address and using ERC7683 standards for cross-chain transfers.
+- We provide a simple search tool and use demonstrated with example of MetalL2 search with simple UX of ERC3770 address
+- Using API from Across protocol we obtain many more tokens combination transfer and trading routes between OPStack chains including those routing to L1.
+  - Example you can deposit USDC on L1 but receive ETH on L2 or L3 or another token depending on the routes
+- We support log in with passkeys
+- We also attempt uto se Farcaster for Log in - https://siera.cc/account
 - This superhack attempts to also combine account abstraction and chain abstraction in addition to the ERC3770 and ERC7683 work.
-- We also used Blockscout to verify contract of our L3 Gas Token on Mode Sepolia.
-- The secret source for my search is AI and a transfer learning small model ~ 10mb in the browser that I can used with my voice and video frames to do search without a keyboard. (not implemented yet)
+- We also used Blockscout to verify our L3 Gas Token contract on Mode Sepolia and access many chain explorers they provide
+- The secret source that I didn't implement AI with a _transfer learning_ model of ~ 10mb in the browser, that I can used on search voice and use video frames do enhance the experience of search.
 
 ## ERC7683 Base L2 to Mode L2 Transfer
 
