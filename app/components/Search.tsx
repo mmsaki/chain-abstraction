@@ -11,6 +11,8 @@ import { getAvailableRoutes } from "../availableRoutesERC7683";
 import { getDepositLimits } from "../depositLimitsERC7683";
 import { getSuggestedFees } from "../suggestedFeesERC7683";
 import { depositERC7683 } from "../depositERC7683";
+import { getTokenData, getTokenList } from "../tokelist";
+import { getChainList } from "../erc3770";
 
 const Search = () => {
   const [formValues, setFormValues] = useState({});
@@ -68,7 +70,7 @@ const Search = () => {
           Search Token addresses on MetalL2?
         </button>
       </div>
-      <div className="flex gap-3 p-2 xs:text-xs sm:text-sm">
+      <div className="grid grid-cols-3 grid-flow-row gap-3 p-2 xs:text-xs sm:text-sm">
         <Link
           href=""
           className="underline text-gray-800"
@@ -123,6 +125,29 @@ const Search = () => {
             setData(data);
           }}>
           Sample Deposit with ERC7683
+        </Link>
+        <Link
+          href=""
+          className="underline text-gray-800"
+          onClick={async (event) => {
+            let owner = "ethereum-optimism";
+            let repo = "ethereum-optimism.github.io";
+            let path = "data";
+            let data = await getTokenList(owner, repo, path);
+            console.log(data);
+            setData(JSON.parse(data));
+          }}>
+          Get OP Token List
+        </Link>
+        <Link
+          href=""
+          className="underline text-gray-800"
+          onClick={async (event) => {
+            let data = await getChainList();
+            console.log(data);
+            setData(data);
+          }}>
+          Get All Chains
         </Link>
       </div>
       <div className="w-[95vw]">
