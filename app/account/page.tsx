@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import LogOut from "../components/LogOut";
+import CreateAccount from "../components/CreateAccount";
 
 function Account() {
   return (
@@ -24,6 +25,7 @@ function Account() {
         <Link href="" className="underline text-gray-800">
           Transactions
         </Link>
+        <CreateAccount />
         <Link href="" className="underline text-gray-800">
           Help
         </Link>

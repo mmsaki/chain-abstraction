@@ -17,7 +17,7 @@ function LogOut() {
         router.push("/");
       }}
       href="/"
-      className={"text-gray-800 hover:underline px-3"}>
+      className={"text-gray-800 hover:underlines"}>
       Log Out
     </Link>
   );

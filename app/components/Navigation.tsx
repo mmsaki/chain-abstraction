@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
 import LogOut from "./LogOut";
+import CreateAccount from "./CreateAccount";
 
 function Navigation() {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ function Navigation() {
 
   return (
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
-      <div className="justify-start items-center flex p-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex xs:text-xs sm:text-sm">
+      <div className="justify-start items-center flex px-8 py-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex xs:text-xs sm:text-sm">
         <Link
           href="/"
           className={`link ${pathname === "/" ? "active text-gray-800 font-medium underline" : ""}`}
@@ -32,20 +33,20 @@ function Navigation() {
         </Link>
       </div>
       <div
-        className="w-full justify-end xs:hidden sm:flex  font-sans text-gray-800 xs:text-xs sm:text-sm"
+        className="w-full justify-end xs:hidden sm:flex font-sans text-gray-800 xs:text-xs sm:text-sm gap-3 px-8"
         id="navbar-solid-bg">
         <MenuIcon />
         <Link
           href="/deposit"
-          className={`link ${pathname === "/deposit" ? "active text-gray-800 font-medium underline px-3" : "px-3"}`}>
+          className={`link ${pathname === "/deposit" ? "active text-gray-800 font-medium underline" : ""}`}>
           Deposit
         </Link>
         <Link
           href="/transfer"
           className={`link ${
             pathname === "/transfer"
-              ? "active text-gray-800 font-medium underline flex justify-center items-center px-3 gap-1"
-              : "flex justify-center items-center px-3 gap-1"
+              ? "active text-gray-800 font-medium underline flex justify-center items-center gap-1"
+              : "flex justify-center items-center gap-1"
           }`}>
           Transfer
           <span>
@@ -56,8 +57,8 @@ function Navigation() {
           href="/receive"
           className={`link ${
             pathname === "/receive"
-              ? "active text-gray-800 font-medium underline flex justify-center items-center px-3 gap-1"
-              : "flex justify-center items-center px-3 gap-1"
+              ? "active text-gray-800 font-medium underline flex justify-center items-center gap-1"
+              : "flex justify-center items-center gap-1"
           }`}>
           Receive
           <span>
@@ -65,17 +66,11 @@ function Navigation() {
           </span>
         </Link>
         {!passkeys ? (
-          <Link
-            href="/create-account"
-            className={`link ${
-              pathname === "/create-account" ? "active text-gray-800 font-medium underline px-3" : "px-3"
-            }`}>
-            Create Account
-          </Link>
+          <CreateAccount />
         ) : (
           <Link
             href="/account"
-            className={`link ${pathname === "/account" ? "active text-gray-800 font-medium underline px-3" : "px-3"}`}>
+            className={`link ${pathname === "/account" ? "active text-gray-800 font-medium underline" : ""}`}>
             Account
           </Link>
         )}
@@ -84,7 +79,7 @@ function Navigation() {
         ) : (
           <Link
             href="/sign-in"
-            className={`link ${pathname === "/sign-in" ? "active text-gray-800 font-medium underline px-3" : "px-3"}`}>
+            className={`link ${pathname === "/sign-in" ? "active text-gray-800 font-medium underline" : ""}`}>
             Sign In
           </Link>
         )}

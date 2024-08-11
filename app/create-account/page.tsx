@@ -4,7 +4,7 @@ import React, { FormEvent } from "react";
 import { createPasskey } from "../passkeys";
 import { useRouter } from "next/navigation";
 
-const RP_NAME = "Siera Smart Account";
+const RP_NAME = window.location.hostname ? window.location.hostname : "http://www.siera.cc";
 
 function CreateAccount() {
   const router = useRouter();
