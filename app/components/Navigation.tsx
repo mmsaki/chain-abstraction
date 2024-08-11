@@ -1,16 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import MenuIcon from "../icons/MenuIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
 import ArrowDownIcon from "../icons/ArrowDownIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
-import LogOut from "./LogOut";
 import CreateAccount from "./CreateAccount";
+// import { Providers } from "../Providers";
 
-function Navigation() {
+function Navigation({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   let passkeys, rawId, isLoggedIn;
@@ -23,6 +23,7 @@ function Navigation() {
   }
 
   return (
+    // <Providers>
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
       <div className="justify-start items-center flex px-8 py-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex xs:text-xs sm:text-sm">
         <Link
@@ -76,6 +77,7 @@ function Navigation() {
         )}
       </div>
     </div>
+    // </Providers>
   );
 }
 

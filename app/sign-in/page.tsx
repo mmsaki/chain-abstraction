@@ -2,6 +2,7 @@
 import React from "react";
 import AccountIcon from "../icons/AccounIcon";
 import { useRouter } from "next/navigation";
+import Providers from "../Providers";
 
 function SignIn() {
   const router = useRouter();
@@ -34,30 +35,32 @@ function SignIn() {
   }
 
   return (
-    <div className="flex flex-1 justify-center items-center flex-col">
-      <div className="flex border rounded-lg p-8">
-        <form action={onSubmit} method="post" className="flex flex-col gap-2">
-          <label htmlFor="username">Name</label>
-          <input
-            className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
-            type="text"
-            name="username"
-            placeholder="username"
-          />
-          <button
-            className="flex items-center justify-center bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
-            type="submit">
-            Sign In
-            <span className="px-2">
-              <AccountIcon />
-            </span>
-          </button>
-          <a className="underline" href="">
-            Forget Password?
-          </a>
-        </form>
+    <Providers>
+      <div className="flex flex-1 justify-center items-center flex-col">
+        <div className="flex border rounded-lg p-8">
+          <form action={onSubmit} method="post" className="flex flex-col gap-2">
+            <label htmlFor="username">Name</label>
+            <input
+              className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
+              type="text"
+              name="username"
+              placeholder="username"
+            />
+            <button
+              className="flex items-center justify-center bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
+              type="submit">
+              Sign In
+              <span className="px-2">
+                <AccountIcon />
+              </span>
+            </button>
+            <a className="underline" href="">
+              Forget Password?
+            </a>
+          </form>
+        </div>
       </div>
-    </div>
+    </Providers>
   );
 }
 

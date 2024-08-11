@@ -1,8 +1,6 @@
 "use client";
 
 import { getTokenData, getTokenList } from "./tokelist";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
 import Image from "next/image";
 import Search from "./components/Search";
 
@@ -27,6 +25,7 @@ export default function Home() {
     <div className="flex flex-1 justify-center items-center flex-col">
       <div className="flex relative sm:mb-12 xs:mb-8">
         {/* logo */}
+
         <p className="xs:text-6xl sm:text-8xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-500 to-pink-500">
           Siera
         </p>

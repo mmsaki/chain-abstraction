@@ -1,3 +1,5 @@
+"use server";
+
 import { writeFileSync } from "fs";
 import { ENTRYPOINT_ADDRESS_V07 } from "permissionless";
 import { signerToSafeSmartAccount } from "permissionless/accounts";
@@ -25,7 +27,7 @@ export const paymasterClient = createPimlicoPaymasterClient({
   entryPoint: ENTRYPOINT_ADDRESS_V07,
 });
 
-async function init() {
+export async function getSmartAccount() {
   const account = await signerToSafeSmartAccount(publicClient, {
     signer: privateKeyToAccount(privateKey),
     entryPoint: ENTRYPOINT_ADDRESS_V07, // global entrypoint
@@ -34,4 +36,4 @@ async function init() {
   console.log(`Smart account address: https://eth-sepolia.blockscout.com/address/${account.address}`);
 }
 
-init();
+getSmartAccount();
