@@ -4,7 +4,13 @@ import React, { FormEvent } from "react";
 import { createPasskey } from "../passkeys";
 import { useRouter } from "next/navigation";
 
-const RP_NAME = window.location.hostname ? window.location.hostname : "http://www.siera.cc";
+let RP_NAME: string;
+try {
+  RP_NAME = window.location.hostname;
+} catch (error) {
+  RP_NAME = "http://www.siera.cc";
+  console.error(error);
+}
 
 function CreateAccount() {
   const router = useRouter();
