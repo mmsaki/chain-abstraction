@@ -23,5 +23,7 @@ export async function getDepositLimits(
       `?inputToken=${inputToken}&outputToken=${outputToken}&originChainId=${originChainId}&destinationChainId=${destinationChainId}`
   );
 
-  return { response: response, data: response.json() };
+  let data = await response.json();
+  console.log(data);
+  return { response: response, data: data };
 }

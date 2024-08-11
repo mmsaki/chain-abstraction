@@ -15,5 +15,7 @@ export async function getAvailableRoutes() {
   let route = `/available-routes`;
 
   let response = await fetch(baseURL + route);
-  return { response: response, data: response.json() };
+  let data = await response.json();
+  console.log(data);
+  return { response: response, data: data };
 }

@@ -87,8 +87,8 @@ function Account() {
           Help
         </Link>
         <LogOut />
+        {data && <p className="">{JSON.stringify(data)}</p>}
       </div>
-      {data && <p className="py-4">{JSON.stringify(data)}</p>}
     </div>
   );
 }

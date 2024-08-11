@@ -32,5 +32,6 @@ export async function getSuggestedFees(originChainId: BigInt, destinationChainId
       route +
       `?tokenSymbol=WETH&originChainId=${originChainId}&destinationChainId=${destinationChainId}&amount=${amount}`
   );
-  return response;
+  let data = await response.json();
+  return { response: response, data: data };
 }
