@@ -1,19 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import MenuIcon from "../icons/MenuIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
 import ArrowDownIcon from "../icons/ArrowDownIcon";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
 
 function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
 
-  const passkeys = loadPasskeysFromLocalStorage();
-  const rawId = getPasskeyFromRawId(passkeys[0].rawId);
-  const isLoggedIn = localStorage.getItem("SieraLoggedUser");
+  let passkeys, rawId, isLoggedIn;
+  try {
+    passkeys = loadPasskeysFromLocalStorage();
+    rawId = getPasskeyFromRawId(passkeys[0].rawId);
+    isLoggedIn = localStorage.getItem("SieraLoggedUser");
+  } catch (error) {
+    console.error(error);
+  }
 
   return (
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
@@ -73,20 +79,26 @@ function Navigation() {
             Account
           </Link>
         )}
-        {!isLoggedIn ? (
+        {isLoggedIn === "true" ? (
+          <Link
+            onClick={() => {
+              try {
+                localStorage.setItem("SieraLoggedUser", "false");
+              } catch (error) {
+                console.error(error);
+              }
+              router.push("/");
+            }}
+            href="/"
+            className={"text-gray-800 hover:underline px-3"}>
+            Log Out
+          </Link>
+        ) : (
           <Link
             href="/sign-in"
             className={`link ${pathname === "/sign-in" ? "active text-gray-800 font-medium underline px-3" : "px-3"}`}>
             Sign In
           </Link>
-        ) : (
-          <button
-            onClick={() => {
-              localStorage.SieraLoggedUser = false;
-            }}
-            className={"text-gray-800 px-3 hover:underline"}>
-            Log Out
-          </button>
         )}
       </div>
     </div>

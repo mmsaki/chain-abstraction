@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
@@ -23,6 +25,9 @@ function Account() {
         </Link>
         <Link href="" className="underline text-gray-800">
           Help
+        </Link>
+        <Link href="" className="underline text-gray-800">
+          Log Out
         </Link>
       </div>
     </div>

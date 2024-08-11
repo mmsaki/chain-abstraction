@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import TranferForm from "../components/TranferForm";
 import Balance from "../components/Balance";

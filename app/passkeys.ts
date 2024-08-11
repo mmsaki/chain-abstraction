@@ -54,7 +54,13 @@ export async function createPasskey(
 export function storePasskeyInLocalStorage(passkey: PasskeyArgType) {
   const passkeys = loadPasskeysFromLocalStorage();
   passkeys.push(passkey);
-  localStorage.setItem(STORAGE_PASSKEY_LIST_KEY, JSON.stringify(passkeys));
+  if (typeof localStorage !== "undefined") {
+    localStorage.setItem(STORAGE_PASSKEY_LIST_KEY, JSON.stringify(passkeys));
+  } else if (typeof sessionStorage !== "undefined") {
+    sessionStorage.setItem("key", "value");
+  } else {
+    console.error("Web Storage is not supported in this environment.");
+  }
 }
 
 /**
@@ -62,7 +68,12 @@ export function storePasskeyInLocalStorage(passkey: PasskeyArgType) {
  * @returns {PasskeyArgType[]} List of passkeys.
  */
 export function loadPasskeysFromLocalStorage(): PasskeyArgType[] {
-  const passkeysStored = localStorage.getItem(STORAGE_PASSKEY_LIST_KEY);
+  let passkeysStored;
+  try {
+    passkeysStored = localStorage.getItem(STORAGE_PASSKEY_LIST_KEY);
+  } catch (error) {
+    console.error(error);
+  }
   const passkeyIds = passkeysStored ? JSON.parse(passkeysStored) : [];
   return passkeyIds;
 }

@@ -1,8 +1,6 @@
 "use client";
-
-import React, { FormEvent } from "react";
+import React from "react";
 import AccountIcon from "../icons/AccounIcon";
-import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
 import { useRouter } from "next/navigation";
 
 function SignIn() {
@@ -23,7 +21,11 @@ function SignIn() {
       .get({ publicKey: options })
       .then((credentials) => {
         console.log("Credentials:", credentials);
-        localStorage.SieraLoggedUser = true;
+        try {
+          localStorage.setItem("SieraLoggedUser", "true");
+        } catch (error) {
+          console.error("Failed to set log in status", error);
+        }
         router.push("/transfer");
       })
       .catch((error) => {
