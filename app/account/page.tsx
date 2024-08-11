@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import LogOut from "../components/LogOut";
 
 function Account() {
   return (
@@ -26,9 +27,7 @@ function Account() {
         <Link href="" className="underline text-gray-800">
           Help
         </Link>
-        <Link href="" className="underline text-gray-800">
-          Log Out
-        </Link>
+        <LogOut />
       </div>
     </div>
   );

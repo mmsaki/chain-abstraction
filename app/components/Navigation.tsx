@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import MenuIcon from "../icons/MenuIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
 import ArrowDownIcon from "../icons/ArrowDownIcon";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
+import LogOut from "./LogOut";
 
 function Navigation() {
   const pathname = usePathname();
-  const router = useRouter();
 
   let passkeys, rawId, isLoggedIn;
   try {
@@ -80,19 +80,7 @@ function Navigation() {
           </Link>
         )}
         {isLoggedIn === "true" ? (
-          <Link
-            onClick={() => {
-              try {
-                localStorage.setItem("SieraLoggedUser", "false");
-              } catch (error) {
-                console.error(error);
-              }
-              router.push("/");
-            }}
-            href="/"
-            className={"text-gray-800 hover:underline px-3"}>
-            Log Out
-          </Link>
+          <LogOut />
         ) : (
           <Link
             href="/sign-in"
