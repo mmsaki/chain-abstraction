@@ -66,7 +66,10 @@ bun run build
 
 **Onchain transactions:**
 
-- L2 Deposit: https://basescan.org/tx/0x9a38d2ded120017328411dc9290d3c2f3886156b2c4190d0b5fd27672c407890
+- L2 Deposit: https://base.blockscout.com/tx/0x9a38d2ded120017328411dc9290d3c2f3886156b2c4190d0b5fd27672c407890
+
+  - Amount: $0.257272
+  - Gas: $0.00562
 
 - L2 Fill: https://explorer.mode.network/tx/0x10c90594638e230b99c3c400402227e9a8c750ee617290c9e8fda61e649ee119
 
