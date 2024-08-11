@@ -8,9 +8,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
 import CreateAccount from "./CreateAccount";
-// import { Providers } from "../Providers";
 
-function Navigation({ children }: { children: ReactNode }) {
+function Navigation() {
   const pathname = usePathname();
 
   let passkeys, rawId, isLoggedIn;
@@ -23,7 +22,6 @@ function Navigation({ children }: { children: ReactNode }) {
   }
 
   return (
-    // <Providers>
     <div className="flex-initial w-full h-16 justify-between items-center inline-flex">
       <div className="justify-start items-center flex px-8 py-5 gap-5 font-sans text-gray-800 xs:hidden sm:flex xs:text-xs sm:text-sm">
         <Link
@@ -77,7 +75,6 @@ function Navigation({ children }: { children: ReactNode }) {
         )}
       </div>
     </div>
-    // </Providers>
   );
 }
 

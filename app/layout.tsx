@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
+import Main from "./main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex flex-col h-screen">
-          <Navigation>{children}</Navigation>
-          <Footer />
-        </main>
+        <Main>{children}</Main>
       </body>
     </html>
   );

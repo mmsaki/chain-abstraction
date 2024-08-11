@@ -5,7 +5,6 @@ import { createPasskey, loadPasskeysFromLocalStorage } from "../passkeys";
 import { useRouter } from "next/navigation";
 import { PasskeyArgType } from "@safe-global/protocol-kit";
 import { usePrivy, Wallet } from "@privy-io/react-auth";
-import Providers from "../Providers";
 
 let RP_NAME: string;
 try {
@@ -50,49 +49,47 @@ function CreateAccount() {
       });
   }
   return (
-    <Providers>
-      <div className="flex flex-1 justify-center items-center flex-col">
-        <div className="flex border rounded-lg p-8">
-          <form onSubmit={onSubmit} method="post" className="flex flex-col gap-2">
-            <label htmlFor="email">Email</label>
-            <input
-              className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
-              type="email"
-              name="email"
-              placeholder="meek@skiff.com"
-              required
-            />
-            <label htmlFor="username">Username</label>
-            <input
-              className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2"
-              type="username"
-              name="username"
-              placeholder="meek"
-              required
-            />
-            <div className="flex flex-col pb-4">
-              <div className="flex items-center gap-2">
-                <input
-                  className="checked:bg-blue-500 "
-                  type="checkbox"
-                  name="smart-wallet-checkbox"
-                  id="smart-wallet-checkbox"
-                  defaultChecked
-                />
-                <label htmlFor="smart-wallet-checkbox">Create Smart Wallet</label>
-              </div>
-              <p className="text-gray-600 px-5">ERC4337 Safe Account</p>
+    <div className="flex flex-1 justify-center items-center flex-col">
+      <div className="flex border rounded-lg p-8">
+        <form onSubmit={onSubmit} method="post" className="flex flex-col gap-2">
+          <label htmlFor="email">Email</label>
+          <input
+            className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
+            type="email"
+            name="email"
+            placeholder="meek@skiff.com"
+            required
+          />
+          <label htmlFor="username">Username</label>
+          <input
+            className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2"
+            type="username"
+            name="username"
+            placeholder="meek"
+            required
+          />
+          <div className="flex flex-col pb-4">
+            <div className="flex items-center gap-2">
+              <input
+                className="checked:bg-blue-500 "
+                type="checkbox"
+                name="smart-wallet-checkbox"
+                id="smart-wallet-checkbox"
+                defaultChecked
+              />
+              <label htmlFor="smart-wallet-checkbox">Create Smart Wallet</label>
             </div>
-            <button
-              disabled={!(ready && authenticated)}
-              className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
-              type="submit">
-              Create Passkey
-            </button>
-          </form>
-        </div>
+            <p className="text-gray-600 px-5">ERC4337 Safe Account</p>
+          </div>
+          <button
+            disabled={!(ready && authenticated)}
+            className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
+            type="submit">
+            Create Passkey
+          </button>
+        </form>
       </div>
-    </Providers>
+    </div>
   );
 }
 
