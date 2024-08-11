@@ -1,6 +1,6 @@
 # Chain Abstraction
 
-Project Name: **Siera** - An explorer for the Superchain with ERC3770 Chain-specific Addresses Search and support for ERC7683 Chain Abstraction transfer.
+Project Name: **Siera** - An explorer for the Superchain with ERC3770 Chain-specific addresses search and support for ERC7683 Cross-Chain Trade Execution Systems.
 
 - [ERC3770](https://eips.ethereum.org/EIPS/eip-3770)
 - [ERC7683](https://eips.ethereum.org/EIPS/eip-7683)
