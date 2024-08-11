@@ -58,10 +58,7 @@ function CreateAccount() {
             </div>
             <p className="text-gray-600 px-5">ERC4337 Safe Account</p>
           </div>
-          <button
-            // onClick={() => router.push("/sign-in")}
-            className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
-            type="submit">
+          <button className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900" type="submit">
             Create Passkey
           </button>
         </form>

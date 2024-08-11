@@ -1,18 +1,47 @@
-import React from "react";
+"use client";
+
+import React, { FormEvent } from "react";
 import AccountIcon from "../icons/AccounIcon";
+import { getPasskeyFromRawId, loadPasskeysFromLocalStorage } from "../passkeys";
+import { useRouter } from "next/navigation";
 
 function SignIn() {
+  const router = useRouter();
+
+  async function onSubmit(event: FormData) {
+    const name = event.get("username");
+    console.log("Username:", name);
+
+    const options: PublicKeyCredentialRequestOptions = {
+      timeout: 60000,
+      challenge: crypto.getRandomValues(new Uint8Array(32)),
+      rpId: window.location.hostname,
+      userVerification: "preferred",
+    } as PublicKeyCredentialRequestOptions;
+
+    await navigator.credentials
+      .get({ publicKey: options })
+      .then((credentials) => {
+        console.log("Credentials:", credentials);
+        localStorage.SieraLoggedUser = true;
+        router.push("/transfer");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }
+
   return (
     <div className="flex flex-1 justify-center items-center flex-col">
       <div className="flex border rounded-lg p-8">
-        <form action="" method="post" className="flex flex-col gap-2">
-          <label htmlFor="username">Username</label>
+        <form action={onSubmit} method="post" className="flex flex-col gap-2">
+          <label htmlFor="username">Name</label>
           <input
             className="focus:outline-none border border-gray-200 rounded-md p-2 mb-2 w-[300px]"
-            type="username"
-            placeholder="meek"
+            type="text"
+            name="username"
+            placeholder="username"
           />
-
           <button
             className="flex items-center justify-center bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
             type="submit">

@@ -1,3 +1,5 @@
+"use client";
+
 import { extractPasskeyData, PasskeyArgType } from "@safe-global/protocol-kit";
 import { STORAGE_PASSKEY_LIST_KEY } from "./lib/constants";
 
@@ -39,6 +41,7 @@ export async function createPasskey(
   }
 
   const passkey = await extractPasskeyData(passkeyCredential);
+  storePasskeyInLocalStorage(passkey);
   console.log("Created Passkey: ", passkey);
 
   return passkey;
