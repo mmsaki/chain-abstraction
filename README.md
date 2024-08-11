@@ -4,14 +4,34 @@
 
 First, install dependencies
 
-```bash
+```sh
 bun install
 ```
 
 ## Run Test
 
-```bash
+```sh
 bun test
+```
+
+## Smart Account Address
+
+Let's run this code with npm.
+
+```sh
+bun run smartAccountAddress
+```
+
+You should see the smart account address printed to the console.
+
+```sh
+Smart account address: https://{chain}.blockscout.com/address/{address}
+```
+
+If the request times out but the `pimlico.js` file has already been compiled to `pimlico.js`
+
+```sh
+node dist/pimlico.js
 ```
 
 # Features
