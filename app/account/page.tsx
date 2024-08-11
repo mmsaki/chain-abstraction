@@ -11,6 +11,7 @@ import { depositERC7683 } from "../depositERC7683";
 import { getDepositLimits } from "../depositLimitsERC7683";
 import { Address } from "viem";
 import { getSuggestedFees } from "../suggestedFeesERC7683";
+import JsonViewer from "../components/JsonViewer";
 
 function Account() {
   const { login } = usePrivy();
@@ -88,8 +89,8 @@ function Account() {
         </Link>
         <LogOut />
         {data && (
-          <div className="text-wrap">
-            <p className="">{JSON.stringify(data)}</p>
+          <div className="w-[95vw]">
+            <JsonViewer results={data} />
           </div>
         )}
       </div>
