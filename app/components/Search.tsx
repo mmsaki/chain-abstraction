@@ -68,7 +68,7 @@ const Search = () => {
           Search Token addresses on MetalL2?
         </button>
       </div>
-      <div className="flex gap-3 p-2">
+      <div className="flex gap-3 p-2 xs:text-xs sm:text-sm">
         <Link
           href=""
           className="underline text-gray-800"
