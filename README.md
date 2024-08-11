@@ -2,6 +2,9 @@
 
 Praject Name: **Siera** - An explorer for the Superchain with ERC3770 Chain-specific Addresses Search and support for ERC7683 Chain Abstraction transfer.
 
+- [ERC3770](https://eips.ethereum.org/EIPS/eip-3770)
+- [ERC7683](https://eips.ethereum.org/EIPS/eip-7683)
+
 ## Getting Started
 
 First, install dependencies
