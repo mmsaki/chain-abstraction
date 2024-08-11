@@ -20,8 +20,8 @@ test("ERC7683 test depoist", async () => {
   let recipient = "0xa3ABf5d29393cE5930074dE6ccB91b9bB56D5923" as Address;
   let relayFeeTotal;
 
-  let feesResponse = await getSuggestedFees(originChainId, destinationChainId, amount);
-  let dataJSON = await feesResponse.json();
+  let { data } = await getSuggestedFees(originChainId, destinationChainId, amount);
+  let dataJSON = data;
   relayFeeTotal = BigInt(dataJSON["totalRelayFee"]["total"]);
 
   if (!relayFeeTotal) throw new Error("Failed to get total relay fee");
