@@ -4,6 +4,9 @@ Project Name: **Siera** - An explorer for the Superchain with ERC3770 Chain-spec
 
 - [ERC3770](https://eips.ethereum.org/EIPS/eip-3770)
 - [ERC7683](https://eips.ethereum.org/EIPS/eip-7683)
+- Other
+
+  - Block Explorer API Routes [EIP-3091](https://eips.ethereum.org/EIPS/eip-3091)
 
 - Live Demo
   - https://siera.cc
@@ -62,6 +65,8 @@ bun run build
 - We test this concept by also deploying a L3 on top of Mode Sepolia L2.
   - This is a perfect use case for the need for readable ERC3770 address and using ERC7683 standards for cross-chain transfers.
 - We provide a simple search tool and use demonstrated with example of MetalL2 search with simple UX of ERC3770 address
+- We read and work with data following the the Superchain Token List resources
+  - https://static.optimism.io/
 - Using API from Across protocol we obtain many more tokens combination transfer and trading routes between OPStack chains including those routing to L1.
   - Example you can deposit USDC on L1 but receive ETH on L2 or L3 or another token depending on the routes
 - We support log in with passkeys

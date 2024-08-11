@@ -149,6 +149,18 @@ const Search = () => {
           }}>
           Get All Chains
         </Link>
+        <Link
+          href=""
+          className="underline text-gray-800"
+          onClick={async (event) => {
+            let { response, data } = await callERC3770Search(
+              "fraxtal-testnet:0x6f24A47Fc8AE5441Eb47EFfC3665e70e69Ac3F05"
+            );
+            console.log(data);
+            setData(data);
+          }}>
+          fraxtal-testnet:0x6f24A47Fc8AE5441Eb47EFfC3665e70e69Ac3F05
+        </Link>
       </div>
       <div className="w-[95vw]">
         <JsonViewer results={data} />

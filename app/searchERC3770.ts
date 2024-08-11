@@ -16,8 +16,16 @@ export async function callERC3770Search(params: string) {
   let { shortName, address } = await parseERC3770String(match);
   if (operator !== shortName) alert(`$Error: Operator ${operator} does not match shortName ${shortName}`);
   if (param !== address) alert(`$Error: Param ${param} does not match address ${address}`);
+  let response;
+  if (shortName === "metall2") {
+    response = await fetch(`https://explorer.metall2.com/api/v2/addresses/${address}`);
+  } else if (shortName === "fraxtal-testnet") {
+    response = await fetch(
+      `https://api-holesky.fraxscan.com/api?module=account&action=txlist&address=${address}&startblock=0&endblock=latest&page=1&offset=2&sort=asc&apikey=${process.env.FraxcanApi}`
+    );
+  }
+  if (!response) throw new Error("Sorry, EIP-3091: Block Explorer API Routes has not been implimented");
 
-  const response = await fetch(`https://explorer.metall2.com/api/v2/addresses/${address}`);
   let data = await response.json();
   return {
     response: response,
