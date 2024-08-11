@@ -4,10 +4,12 @@ import MicIcon from "../icons/MicIcon";
 import SearchIcon from "../icons/SearchIcon";
 import { callERC3770Search } from "../searchERC3770";
 import { getMetalL2Addresses } from "../matall2Addresses";
+import JsonView from "react18-json-view";
+import "react18-json-view/src/style.css";
 
 const Search = () => {
   const [formValues, setFormValues] = useState({});
-  const [results, setResults] = useState({});
+  const [results, setResults] = useState(null);
 
   return (
     <>
@@ -61,10 +63,10 @@ const Search = () => {
           }}
           className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl xs:hidden sm:flex sm:text-sm"
           type="button">
-          What is address on MetalL2?
+          Search Token addresses on MetalL2?
         </button>
       </div>
-      <p className="flex">{results ? JSON.stringify(results) : ""}</p>
+      <div className="flex break-words w-[90vw]">{results !== null ? <JsonView src={results} /> : ""}</div>
     </>
   );
 };

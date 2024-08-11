@@ -87,7 +87,11 @@ function Account() {
           Help
         </Link>
         <LogOut />
-        {data && <p className="">{JSON.stringify(data)}</p>}
+        {data && (
+          <div className="text-wrap">
+            <p className="">{JSON.stringify(data)}</p>
+          </div>
+        )}
       </div>
     </div>
   );
