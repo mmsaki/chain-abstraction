@@ -3,7 +3,7 @@ import React from "react";
 function QRCodeIcon() {
   return (
     <svg
-      className="fill-gray-500 w-8 h-8 hover:fill-gray-800"
+      className="fill-gray-500 w-6 h-6 hover:fill-gray-800"
       width="33"
       height="32"
       viewBox="0 0 33 32"
