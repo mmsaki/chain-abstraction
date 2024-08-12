@@ -31,19 +31,25 @@ function CreateAccount() {
     await createPasskey(RP_NAME, email, username)
       .then(async () => {
         // privy
-        let wallet = await createWallet();
+        let wallet;
+        // wallet = await createWallet();
         let passkeys = loadPasskeysFromLocalStorage();
-        localStorage.setItem("PrivyWallet", JSON.parse(wallet.address));
-        console.log("🎉 Created Wallet", wallet.address);
+        // localStorage.setItem("PrivyWallet", JSON.parse(wallet.address));
+        // console.log("🎉 Created Wallet", wallet.address);
         console.log("🎉 Created Passkeys", passkeys);
         return {
           passkeys: passkeys,
-          wallet: wallet,
+          // wallet: wallet,
         };
       })
-      .then((createData: { passkeys: PasskeyArgType[]; wallet: Wallet }) => {
-        router.push("/sign-in");
-      })
+      .then(
+        (createData: {
+          passkeys: PasskeyArgType[];
+          // wallet: Wallet;
+        }) => {
+          router.push("/sign-in");
+        }
+      )
       .catch((error) => {
         alert(`Create Passkeys Failed: ${error}`);
       });
@@ -76,15 +82,13 @@ function CreateAccount() {
                 name="smart-wallet-checkbox"
                 id="smart-wallet-checkbox"
                 defaultChecked
+                disabled
               />
               <label htmlFor="smart-wallet-checkbox">Create Smart Wallet</label>
             </div>
             <p className="text-gray-600 px-5">ERC4337 Safe Account</p>
           </div>
-          <button
-            disabled={!(ready && authenticated)}
-            className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900"
-            type="submit">
+          <button className="bg-gray-700 text-gray-75 py-2 rounded-lg hover:bg-gray-900" type="submit">
             Create Passkey
           </button>
         </form>
