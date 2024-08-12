@@ -9,7 +9,11 @@ Project Name: **Siera** - An explorer for the Superchain with ERC3770 Chain-spec
   - Block Explorer API Routes [EIP-3091](https://eips.ethereum.org/EIPS/eip-3091)
 
 - Live Demo
+
   - https://siera.cc
+
+- Figma
+  - [Design](https://www.figma.com/design/Qry4omD6nAfqlkfH5amfFU/chain-abstraction?node-id=0-1&t=CIfH2y45fCkQuxAY-1)
 
 ## Getting Started
 
