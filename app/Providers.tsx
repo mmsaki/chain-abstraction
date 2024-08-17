@@ -73,7 +73,7 @@ export function Providers({ children }: { children: ReactNode }) {
     },
   };
   return (
-    <PrivyProvider appId="clzphuk18025vdnte8rlch87r" config={privyConfig}>
+    <PrivyProvider appId={appID} config={privyConfig}>
       <QueryClientProvider client={queryClient}>
         <WagmiProvider config={wagmiConfig}>{children}</WagmiProvider>
       </QueryClientProvider>
